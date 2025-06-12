@@ -260,7 +260,8 @@ class LiteLLMAgent:
                 
                 # Execute the MCP tool
                 tool_result = await self._execute_mcp_tool(function_name, function_args)
-                
+                logger.info(f"MCP Tool Result ({function_name}): {json.dumps(tool_result, indent=2)}")
+
                 # Add function result to conversation
                 function_message = {
                     "role": "function",
